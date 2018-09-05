@@ -1,0 +1,10 @@
+version: '2'
+services:
+  api:
+    build: .
+    volumes:
+     - .:/usr/code
+    ports:
+     - "2002:2002"
+    environment:
+      - WEB_ENV=${WEB_ENV}

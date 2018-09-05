@@ -1,0 +1,19 @@
+Report Monthly information
+---
+tags:
+  - Reports
+parameters:
+  - name: month
+    in: query
+    required: true
+    type: string
+    example: '06'
+  - name: year
+    in: query
+    required: true
+    type: string
+    example: '2018'
+
+responses:
+    200:
+        description: "status:1 is success; status: 0 is failure;"

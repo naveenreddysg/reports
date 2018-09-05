@@ -1,0 +1,11 @@
+Flask
+Flask-JWT
+Flask-RESTful
+Flask-SQLAlchemy
+mysqlclient
+flasgger
+Flask-Excel
+pybars3
+pdfkit
+num2words
+flask-cors

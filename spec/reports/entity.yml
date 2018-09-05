@@ -1,0 +1,32 @@
+Report information
+---
+tags:
+  - Reports
+parameters:
+  - name: path
+    in: path
+    required: true
+    type: string
+  - name: from
+    in: query
+    required: false
+    type: string
+  - name: to
+    in: query
+    required: false
+    type: string
+  - name: code
+    in: query
+    required: false
+    type: string
+  - name: key
+    in: query
+    required: false
+    type: string
+  - name: param
+    in: query
+    required: false
+    type: string
+responses:
+    200:
+        description: "status:1 is success; status: 0 is failure;"

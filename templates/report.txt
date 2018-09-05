@@ -1,0 +1,195 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{
+         width:595px;
+         margin:30px 24px;
+         background-color:#FFFFFF;
+         font-family:Arial;
+         font-size: 10px !important;
+        }
+
+        table{
+            width: 100% !important;
+            font-size: 10px !important;
+        }
+
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th align="left" style="font-size: 16px; font-weight: bold;">SRI VISHWAKARMA PLAYWOOD</th>
+        <th align="right" style="font-size: 16px; font-weight: bold;">TAX INVOICE</th>
+    </tr>
+</table>
+<table>
+   <tr>
+       <td style="width: 70%;">
+           <table>
+               <tr>
+                   <td style="font-weight: bold;">{{customerName}},</td>
+               </tr>
+               <tr>
+                   <td style="font-weight: bold;">{{customerLane}}, {{customerSteet}},</td>
+               </tr>
+               <tr>
+                   <td style="font-weight: bold;">{{customerArea}},{{customerCity}}</td>
+               </tr>
+               <tr>
+                   <td></td>
+               </tr>
+               <tr>
+                   <td style="font-weight: bold;"> PHONE: {{customerMobile}}</td>
+               </tr>
+
+               <tr>
+                   <td style="font-weight: bold;"> GMAIL: {{customerEmail}}</td>
+               </tr>
+           </table>
+       </td>
+       <td>
+           <table style="border: 1px solid black; border-collapse: collapse;">
+               <tr style="height: 30px;">
+                   <td style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;" >INVOICE NUMBER</td>
+                   <td style="border: 1px solid black; border-collapse: collapse; padding-left: 10px;" >{{invoiceNumber}}</td>
+               </tr>
+               <tr style="height: 30px;">
+                   <td style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">INVOICE DATE</td>
+                   <td style="border: 1px solid black; border-collapse: collapse; padding-left: 10px;" >{{invoiceDate}}</td>
+               </tr>
+           </table>
+       </td>
+   </tr>
+</table>
+
+<table style="border: 1px solid black; border-collapse: collapse;">
+    <thead>
+        <tr>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">S.No</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Description of Goods</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">HSN<br> ACS</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Qty</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Rate</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Amount</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">GST<br>%</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">GST <br>Amount</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">After Tax <br>Amount</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr >
+        <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;"></td>
+        <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;"></td>
+        <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;"></td>
+        <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;"></td>
+        <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;"></td>
+        <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;"></td>
+        <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;"></td>
+        <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;"></td>
+        <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td style="border-right: 1px solid black;">Total</td>
+        <td style="border-right: 1px solid black;"></td>
+        <td ></td>
+        <td style="border-right: 1px solid black;"></td>
+        <td></td>
+    </tr>
+    </tbody>
+
+
+</table>
+<table style="border-spacing: 0px 5px;">
+    <tr>
+        <td >
+            <table style="border: 1px solid black; border-collapse: collapse;  font-weight: bold; width: 50%; min-height: 13.2em;">
+                <tr >
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5; padding: 5px;">Total Invoice Amount <br> In Words:</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Bank Details:</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Account Number:</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">IFSC Code:</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;"></td>
+                </tr>
+            </table>
+        </td>
+        <td >
+            <table style="border: 1px solid black; border-collapse: collapse;  font-weight: bold; width: 50%; min-height: 10em;">
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Total Amount Before Tax:</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;"></td>
+                </tr>
+                 <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Add CGST:</td>
+                     <td style="border: 1px solid black; border-left: 0; width: 50%;">{{cgst}}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Add SGST:</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;">{{sgst}}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Tax Amount GST:</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;">{{gst}}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Add Fright Changes:</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Total Amount After Tax:</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <table style="border: 1px solid black; border-collapse: collapse;  font-weight: bold;">
+                <tr>
+                    <td style="padding: 5px 0px 30px 5px;">Received Goods Condition:</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="padding: 0px 0px 5px 5px;">Customer Signature:</td>
+                    <td></td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table style="border: 1px solid black; border-collapse: collapse;  font-weight: bold; ">
+                <tr>
+                    <td style="padding: 5px 0px 30px 5px;">
+                        For:
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="padding: 0px 0px 5px 5px;">
+                        Authorized Signature:
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<p>Note: 1. Goods once sold will not return back 2. All subjects submit in hyderabad court only</p>
+</body>
+</html>

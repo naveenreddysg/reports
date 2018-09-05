@@ -1,0 +1,245 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{
+         -webkit-print-color-adjust:exact;
+         width:794px;
+         margin:30px 24px;
+         background-color:#FFFFFF;
+         font-family:Arial;
+         font-size: 10px !important;
+        }
+
+        table{
+            width: 100% !important;
+            font-size: 10px !important;
+            border-color: #DDD;
+        }
+        tr{
+            border-color: #DDD;
+        }
+        @media print {
+           table .item{page-break-inside: avoid;}
+           .calc{
+            page-break-inside: avoid;
+           }
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th align="left" style="font-size: 16px; font-weight: bold;">{{companyName}}</th>
+        <th align="right" style="font-size: 16px; font-weight: bold;">TAX INVOICE</th>
+    </tr>
+</table>
+<table>
+   <tr>
+       <td style="width: 60%;">
+           <table>
+               <tr>
+                   <td style="font-weight: bold;">{{customerName}}</td>
+               </tr>
+               <tr>
+                   <td style="">{{customerLane}}, {{customerSteet}},</td>
+               </tr>
+               <tr>
+                   <td style="">{{customerArea}}, {{customerCity}} - {{customerZipcode}}</td>
+               </tr>
+               <tr>
+                   <td></td>
+               </tr>
+               <tr>
+                   <td style="font-weight: bold;"> PHONE: {{customerMobile}}</td>
+               </tr>
+
+               <tr>
+                   <td style="font-weight: bold;"> GMAIL: {{customerEmail}}</td>
+               </tr>
+           </table>
+       </td>
+       <td>
+           <table style="border: 1px solid black; border-collapse: collapse;">
+               <tr style="height: 30px;">
+                   <td style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;" >INVOICE NUMBER</td>
+                   <td style="border: 1px solid black; border-collapse: collapse; padding-left: 10px;" >{{invoiceNumber}}</td>
+               </tr>
+               <tr style="height: 30px;">
+                   <td style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">INVOICE DATE</td>
+                   <td style="border: 1px solid black; border-collapse: collapse; padding-left: 10px;" >{{invoiceDate}}</td>
+               </tr>
+           </table>
+       </td>
+   </tr>
+</table>
+{{#if products}}
+<table style="border: 1px solid black; border-collapse: collapse;" class="item">
+    <thead>
+        <tr>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">S.No</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Particulars of Product</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">HSN<br> ACS</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Qty</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Rate</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Amount</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">GST %</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">GST <br>Amount</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">After Tax <br>Amount</th>
+    </tr>
+    </thead>
+    <tbody >
+        {{#each products}}
+        <tr >
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.SNo}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.productName}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.productHsnCode}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.Qty}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.Rate}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.Amount}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.gst}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.gstAmount}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.TotalAfterTax}}</td>
+        </tr>
+        {{/each}}
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td style="border-right: 1px solid black; font-weight: bold">Total</td>
+        <td style="border-right: 1px solid black; font-weight: bold"> {{subtotal}} </td>
+        <td ></td>
+        <td ></td>
+        <td style="border-right: 1px solid black; font-weight: bold">{{total}}</td>
+    </tr>
+    </tbody>
+</table>
+{{/if}}
+{{#if services}}
+<table style="border: 1px solid black; border-collapse: collapse; margin-top: 10px;" class="item">
+    <thead>
+        <tr>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">S.No</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Particulars of Service</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Service<br>Code</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Qty</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Rate</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">Amount</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">GST %</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">GST <br>Amount</th>
+        <th style="border: 1px solid black; border-collapse: collapse; background-color: #D5D5D5; padding-left: 10px; font-weight: bold;">After Tax <br>Amount</th>
+    </tr>
+    </thead>
+    <tbody >
+        {{#each services}}
+        <tr >
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.SNo}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.serviceName}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.serviceCode}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.Qty}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.Rate}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.Amount}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.gst}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.gstAmount}}</td>
+            <td style="border: 1px solid black; border-collapse: collapse;  padding-left: 10px; font-weight: bold;">{{this.TotalAfterTax}}</td>
+        </tr>
+        {{/each}}
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td style="border-right: 1px solid black; font-weight: bold">Total</td>
+        <td style="border-right: 1px solid black; font-weight: bold"> {{subtotal}} </td>
+        <td ></td>
+        <td ></td>
+        <td style="border-right: 1px solid black; font-weight: bold">{{total}}</td>
+    </tr>
+    </tbody>
+</table>
+{{/if}}
+<table style="border-spacing: 0px 5px;" class="calc">
+    <tr >
+        <td style="width: 60%;">
+            <table style="border: 1px solid black; border-collapse: collapse;  font-weight: bold; width: 50%; height: 13.2em;">
+                <tr >
+                    <td style="border: 1px solid black; border-right: 0; width: 30%; background-color: #D5D5D5; padding: 5px;">Total Invoice Amount <br> In Words&nbsp;</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 70%;padding: 5px;">{{ItoW}} Rupees only</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 30%; background-color: #D5D5D5;  padding: 5px;">Bank Details&nbsp;</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 70%; padding: 5px;">{{bankName}}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 30%; background-color: #D5D5D5;  padding: 5px;">Account Number&nbsp;</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 70%;">&nbsp; {{accountNumber}}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 30%; background-color: #D5D5D5;  padding: 5px;">IFSC Code&nbsp;</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 70%;">&nbsp; {{ifscCode}}</td>
+                </tr>
+            </table>
+        </td>
+        <td >
+            <table style="border: 1px solid black; border-collapse: collapse;  font-weight: bold; width: 50%; height: 13.2em;">
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Total Amount Before Tax&nbsp;</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;"> &nbsp; {{subtotal}}</td>
+                </tr>
+                 <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Add CGST&nbsp;</td>
+                     <td style="border: 1px solid black; border-left: 0; width: 50%;"> &nbsp; {{cgst}}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Add SGST&nbsp;</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;"> &nbsp; {{sgst}}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Tax Amount GST&nbsp;</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;"> &nbsp; {{gst}}</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; border-right: 0; width: 50%; background-color: #D5D5D5;  padding: 5px;">Total Amount After Tax&nbsp;</td>
+                    <td style="border: 1px solid black; border-left: 0; width: 50%;"> &nbsp; {{total}}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr >
+        <td style="width: 50%;">
+            <table style="border: 1px solid black; border-collapse: collapse;  font-weight: bold;">
+                <tr>
+                    <td style="padding: 5px 0px 30px 5px;">Received Goods Condition:</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="padding: 0px 0px 5px 5px;">Customer Signature</td>
+                    <td></td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table style="border: 1px solid black; border-collapse: collapse;  font-weight: bold; ">
+                <tr>
+                    <td style="padding: 5px 0px 30px 5px;">
+                        For:
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="padding: 0px 0px 5px 5px;">
+                        Authorized Signature
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<p>Note: 1. Goods once sold will not return back 2. All subjects submit in hyderabad court only</p>
+</body>
+</html>
